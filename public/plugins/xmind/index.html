@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html site-mode="en" mode="production" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>xmind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./static/main.css">
+    <script src="./static/jquery-3-c9f5aeeca3.2.1.min.js"></script>
+    <script src="./static/polyfill-45b9836beb.min.js"></script>
+    <script src="./static/getQueryValue.js"></script>
+</head>
+<body>
+<div id="share-map" class="share-map">
+    <div id="content" class="share-map__content">
+        <div class="share-map__loading invisible">
+            <video autoplay muted preload playsinline loop class="mindmap-loading-animate" style="max-width: 240px;">
+                <source src="./static/structure-loading-animate-ec6aa8c56e.mp4" type="video/mp4">
+                <i class="fas fa-spinner fa-pulse"></i>
+            </video>
+            <img class="d-none" data-src="./static/structure-loading-animate-08d3b453a2.gif" src="#"
+                 style="width: 240px" alt="XMind loading animation."/>
+            <div>Loading<span class="dot-animate"></span></div>
+        </div>
+    </div>
+    <div class="share-map__zoom-control"></div>
+</div>
+<script>
+    // 'http://localhost:63342/root/xmind/学习提高.xmind'
+    window.xmindurl = decodeURIComponent(getQueryValue(location.href, 'r'));
+</script>
+<script src="./static/js-cookie-a978ac7394.js"></script>
+<script src="./static/base.b0ab3a5c84.js"></script>
+<script src="./static/share-map.1360eb6779.js"></script>
+</body>
+</html>

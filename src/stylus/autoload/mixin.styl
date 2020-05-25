@@ -1,0 +1,169 @@
+// 快速icon图片: icon('~assets/image/icon/xxx.jpg', 10px, 10px);
+icon($url, $width, $height) {
+    content: '';
+    inline-block();
+    width: $width;
+    height: $height;
+    background: url($url) no-repeat 0 0;
+    background-size: $width $height;
+}
+
+// 圆角: border-radius(10px);
+border-radius(value) {
+    -webkit-border-radius: value;
+    border-radius: value;
+    // -moz-border-radius: value;
+}
+
+// 透明度 opacity(30)
+opacity(value) {
+    opacity: (value / 100);
+    // filter: "alpha(opacity=value)";
+}
+
+// 阴影:(横轴偏移 纵轴偏移 阴影偏移 阴影颜色)
+// box-shadow(10px 10px 5px #888888);
+box-shadow() {
+    -webkit-box-shadow: arguments;
+    box-shadow: arguments;
+    // -moz-box-shadow: arguments;
+}
+
+// 三角形: triangle(10px, 8px, #fdedea, 'down');
+triangle($width, $height, $color = #333, $dir = 'up') {
+    content: '';
+    inline-block();
+    width: 0;
+    height: 0;
+    border-style: solid;
+    if ($dir == 'up') {
+        border-width: 0 ($width/ 2) $height;
+        border-color: transparent transparent $color;
+    }
+    else if ($dir == 'down') {
+        border-width: $height ($width/ 2) 0;
+        border-color: $color transparent transparent;
+    }
+    else if ($dir == 'left') {
+        border-width: ($height/ 2) $width ($height/ 2) 0;
+        border-color: transparent $color transparent transparent;
+    }
+    else if ($dir == 'right') {
+        border-width: ($height/ 2) 0 ($height/ 2) $width;
+        border-color: transparent transparent transparent $color;
+    }
+}
+
+// 盒模型计算模式: @type border-box | content-box
+// border-box是维持了IE传统（IE怪异模式）下的Box Model
+// box-sizing(border-box);
+box-sizing(type) {
+    -webkit-box-sizing: type;
+    box-sizing: type;
+    // -moz-box-sizing: type;
+    // -ms-box-sizing: type;
+}
+
+clearfix() {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+    // *zoom: 1;
+}
+
+// 提供inline-block的兼容显示效果
+inline-block() {
+    display: inline-block;
+    // \*display: inline;
+    // zoom: 1;
+}
+
+// 文字选择
+user-select(type = none) {
+    -webkit-user-select: type; // webkit浏览器
+    user-select: type;
+    // -moz-user-select: type; // 火狐
+    // -ms-user-select: type; // IE10
+    // -khtml-user-select: type; // 早期浏览器
+}
+
+// 绝对定位居中
+pa-center() {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform(translate3d(-50%, -50%, 0));
+
+    // transform(translate(-50%, -50%));
+}
+
+// 2D转换
+// 位置偏移: transform(translate(50px,100px)); transform(translate(-50%, -50%));
+// 旋转角度: transform(rotate(30deg));
+// 缩放: transform(scale(1.5, 2));
+// 翻转角度: transform(skew(30deg,20deg));
+// 使用六个值的矩阵: transform(matrix(0.866,0.5,-0.5,0.866,0,0));
+transform(value) {
+    transform: value;
+    -webkit-transform: value; /* Safari and Chrome */
+    // -ms-transform: value; /* IE 9 */
+    // -o-transform: value; /* Opera */
+    // -moz-transform: value; /* Firefox */
+}
+
+// 相对位置: transform-origin(0, 0);
+transform-origin() {
+    -webkit-transform-origin: arguments;
+    transform-origin: arguments;
+    // -moz-transform-origin: arguments;
+    // -ms-transform-origin: arguments;
+    // -o-transform-origin: arguments;
+}
+
+// CSS3动画
+// @keyframes	规定动画。
+// animation	所有动画属性的简写属性，除了 animation-play-state 属性。
+// animation-name	规定 @keyframes 动画的名称。
+// animation-duration	规定动画完成一个周期所花费的秒或毫秒。默认是 0。
+// animation-timing-function	规定动画的速度曲线。默认是 "ease"。
+// animation-delay	规定动画何时开始。默认是 0。
+// animation-iteration-count	规定动画被播放的次数。默认是 1。
+// animation-direction	规定动画是否在下一周期逆向地播放。默认是 "normal"。 normal|alternate;
+// animation-play-state	规定动画是否正在运行或暂停。默认是 "running"。 paused|running
+// animation-fill-mode	规定对象动画时间之外的状态。 none | forwards(当动画完成后保持最后一个属性值,最后一个关键帧) | backwards(第一个关键帧) | both(向前和向后填充模式都被应用)
+// ----------------------
+// animation(myfirst 5s linear 2s infinite alternate);
+/*
+animation(value) {
+  animation: value;
+  -webkit-animation: value;
+// -moz-animation: value;
+// -o-animation: value;
+}
+*/
+
+// CSS3过渡
+// transition	                简写属性，用于在一个属性中设置四个过渡属性。
+// transition-property	      规定应用过渡的 CSS 属性的名称。
+// transition-duration	      定义过渡效果花费的时间。默认是 0。
+// transition-timing-function	规定过渡效果的时间曲线。默认是 "ease"。
+// transition-delay	          规定过渡效果何时开始。默认是 0。
+// ----------------------
+// transition(width 1s linear 2s);
+// transition(top .1s \, left .1s);
+// transition(width 2s);
+// transition(all 0.4s);
+transition(value) {
+    -webkit-transition: value;
+    transition: value;
+    //  -moz-transition: value;
+    //  -o-transition: value;
+}
