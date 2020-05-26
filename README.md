@@ -5,7 +5,7 @@
 [点击查看演示](https://qjflying.github.io/archive/demo/demo.html)
 
 ## 通过文件夹存放
-![图片](./demo/book/文件目录.png)
+![图片](https://qjflying.github.io/archive/demo/book/文件目录.png)
 
 ## 目录配置
 * 使用文件夹
