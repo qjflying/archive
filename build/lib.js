@@ -26,10 +26,6 @@ shell.cp(
     path.join(rootpath, './lib')
 );
 
-shell.cat(path.join(rootpath, './build/html.tpl')).to(
-    path.join(rootpath, './lib/demo.html')
-);
-
 shell.rm('-rf', path.join(rootpath, './dist'));
 
 shell.echo('build success');

@@ -47,7 +47,8 @@ module.exports = {
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
         contentBase: [
-            resolve('public')
+            resolve('public'),
+            resolve('demo')
         ],
         open: true,
         host: '0.0.0.0',

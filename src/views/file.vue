@@ -28,7 +28,7 @@ export default {
         fetchData() {
             let { filepath, filetype } = decodePath(this.path);
 
-            console.log(this.path, filepath, filetype);
+            // console.log(this.path, filepath, filetype);
 
             // let filepath = './book/基础格式/测试.md';
             // let filetype = 'md';

@@ -2,7 +2,7 @@
 
 > 通过文件夹分类存放管理知识, 配置目录关联文件, 支持markdown、图片、pdf、xmind等多种文件格式。
 
-[点击查看演示](https://www.xxx.com/) 
+<a target="_blank" href="https://qjflying.github.io/archive/demo/index.html">点击查看演示</a>
 
 ![图片](./book/文件目录.png)
 

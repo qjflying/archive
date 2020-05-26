@@ -125,7 +125,10 @@ export default {
                 }
                 nodepath += "/" + options.include;
             } else {
-                nodelink = "#/file/" + patharr.join("/") + "/" + text;
+                nodelink =
+                    patharr.length > 0
+                        ? "#/file/" + patharr.join("/") + "/" + text
+                        : "#/file/" + text;
                 nodepath += "/" + text;
 
                 if (options.type) {
