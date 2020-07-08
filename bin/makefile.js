@@ -110,8 +110,10 @@ module.exports = function (opts) {
     let datalist = scanDir(rootpath, {listmd: o.make});
     let str = createList(datalist);
 
-    fs.writeFileSync(path.join(rootpath, o.make), str);
+
+    let outputfile = path.join(rootpath, o.make);
+    fs.writeFileSync(outputfile, str);
 
     // fs.writeFileSync(path.join('/Users/qianjing/mygithub/archive', o.make), str);
-    console.log('finish');
+    console.log('创建: ' + outputfile + ' finish');
 }
