@@ -33,12 +33,14 @@ function scanDir(dirpath, opts) {
         let isDir = stats.isDirectory(); //是文件夹  
         let name = path.basename(filepath);
         if (isFile) {
+            let islistmd = opts.listmd === name;
             fileArray.push({
                 type: 'file',
                 name,
+                islistmd,
                 filepath
             });
-            if (opts.listmd === name) {
+            if (islistmd) {
                 listmd = opts.listmd;
             }
         }
@@ -66,6 +68,11 @@ function createList(data) {
         let name = d.name;
         
         if ('file' === type) {
+            // 如果第一级含有list.md跳过
+            if (0 === level && d.islistmd) {
+                return;
+            }
+
             // 根据所在文件夹的层级添加空格
             arr.push(_.repeat(sign, level * space) + '* ' + name);
         } else if ('dir' === type) {

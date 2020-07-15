@@ -76,6 +76,15 @@ export default {
                     );
                 }
             });
+
+            if (window.archive.dirformat) {
+                $("#sidebar strong").each(function () {
+                    let cur = $(this);
+                    let text = cur.text();
+                    cur.data('text', text).text(window.archive.dirformat(text));
+                });
+            }
+
             $("#sidebar strong").on("click", function() {
                 $(this)
                     .siblings("ul")
@@ -92,7 +101,7 @@ export default {
                 let curul = $(item);
                 let curstrong = curul.siblings("strong").eq(0);
                 if (curstrong.length > 0) {
-                    let text = $.trim(curstrong.text());
+                    let text = $.trim(curstrong.data('text') || curstrong.text());
                     patharr.unshift(text);
                 }
             });
